@@ -39,22 +39,20 @@ export default function App() {
   }
 
   return (
-    <div className="container py-4">
-      <h3 className="mb-3 text-center">Engineering</h3>
+    <div className="app-container">
+      <div className="bg-light py-1 mb-1">
+        <h4 className="mb-0 text-center fw-bold">Engineering 2</h4>
+      </div>
 
       <FiltersBar onApply={handleApply} />
 
       {loadingSummary ? (
-        <div className="alert alert-info">Carregando resumo...</div>
+        <div className="alert alert-info m-0 mb-1">Carregando resumo...</div>
       ) : (
         <SummaryCards summary={summary} />
       )}
 
-      <div className="card mt-3">
-        <div className="card-body">
-          <ReportTable filters={filters} />
-        </div>
-      </div>
+      <ReportTable filters={filters} />
     </div>
   );
 }

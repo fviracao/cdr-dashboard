@@ -1,0 +1,177 @@
+/* ReportTable.css */
+
+.report-table-container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.d-flex.justify-content-between {
+  margin-bottom: 0.3rem;
+  padding: 0.3rem 0.5rem;
+  background-color: #f8f9fa;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 84vh;
+  border: none;
+  border-top: 2px solid #dee2e6;
+  border-bottom: 2px solid #dee2e6;
+  background-color: white;
+}
+
+.compact-table {
+  font-size: 0.7rem; /* REDUZIDO de 0.8rem */
+  margin-bottom: 0;
+  white-space: nowrap;
+  width: 100%;
+  table-layout: auto;
+}
+
+.compact-table th,
+.compact-table td {
+  padding: 0.35rem 0.45rem; /* REDUZIDO */
+  vertical-align: middle;
+  border: 1px solid #e0e0e0;
+  line-height: 1.2;
+}
+
+.compact-table th:first-child,
+.compact-table td:first-child {
+  border-left: none;
+}
+
+.compact-table th:last-child,
+.compact-table td:last-child {
+  border-right: none;
+}
+
+.sticky-header th {
+  position: sticky;
+  top: 0;
+  background-color: #f8f9fa;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  font-size: 0.65rem; /* REDUZIDO */
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+/* Larguras das colunas - MAIS COMPACTAS */
+.col-timestamp {
+  min-width: 105px;
+  width: 105px;
+}
+
+.col-number {
+  min-width: 95px;
+  width: 95px;
+}
+
+.col-duration {
+  min-width: 60px;
+  width: 60px;
+  text-align: center;
+}
+
+.col-nap {
+  min-width: 130px;
+  width: auto;
+}
+
+.col-cause {
+  min-width: 110px;
+  width: auto;
+}
+
+.col-ip {
+  min-width: 100px;
+  width: 100px;
+}
+
+.col-codec {
+  min-width: 60px;
+  width: 60px;
+  text-align: center;
+}
+
+.col-type {
+  min-width: 55px;
+  width: 55px;
+  text-align: center;
+}
+
+/* Truncar texto */
+.text-truncate {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Zebra striping */
+.compact-table tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.compact-table tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.08);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+/* Badges menores */
+.badge {
+  font-size: 0.65rem; /* REDUZIDO */
+  padding: 0.25em 0.5em;
+  font-weight: 600;
+}
+
+/* Números monospace */
+.font-monospace {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.68rem; /* REDUZIDO */
+}
+
+.small {
+  font-size: 0.68rem !important; /* REDUZIDO */
+}
+
+/* Responsivo */
+@media (max-width: 1600px) {
+  .compact-table {
+    font-size: 0.65rem;
+  }
+  
+  .compact-table th,
+  .compact-table td {
+    padding: 0.3rem 0.4rem;
+  }
+  
+  .sticky-header th {
+    font-size: 0.6rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .compact-table {
+    font-size: 0.75rem;
+  }
+  
+  .compact-table th,
+  .compact-table td {
+    padding: 0.4rem 0.5rem;
+  }
+  
+  .sticky-header th {
+    font-size: 0.7rem;
+  }
+  
+  .table-wrapper {
+    max-height: 87vh;
+  }
+}
