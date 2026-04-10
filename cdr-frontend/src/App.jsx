@@ -40,14 +40,14 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <div className="bg-light py-1 mb-1">
-        <h4 className="mb-0 text-center fw-bold">Engineering 2</h4>
+      <div className="bg-light py-2 mb-3 rounded">
+        <h5 className="mb-0 text-center fw-bold">Engineering</h5>
       </div>
 
       <FiltersBar onApply={handleApply} />
 
       {loadingSummary ? (
-        <div className="alert alert-info m-0 mb-1">Carregando resumo...</div>
+        <div className="alert alert-info mb-3">Carregando resumo...</div>
       ) : (
         <SummaryCards summary={summary} />
       )}

@@ -130,7 +130,7 @@ export default function ReportTable({ filters }) {
   return (
     <div className="report-table-container">
       <div className="d-flex justify-content-between align-items-center mb-2">
-        <div><strong>Total: {total.toLocaleString()}</strong></div>
+        <div>Total: {total.toLocaleString()}</div>
         <div>
           <button className="btn btn-sm btn-secondary me-2" onClick={prevPage} disabled={from === 0}>
             Prev
@@ -147,17 +147,17 @@ export default function ReportTable({ filters }) {
         <table className="table table-sm table-bordered table-hover compact-table">
           <thead className="table-light sticky-header">
             <tr>
-              <th className="col-timestamp">Timestamp</th>
-              <th className="col-number">Calling</th>
-              <th className="col-number">Called</th>
-              <th className="col-duration">Duration</th>
-              <th className="col-nap">Incoming NAP</th>
-              <th className="col-nap">NAP</th>
-              <th className="col-cause">Cause</th>
-              <th className="col-ip">Local IP</th>
-              <th className="col-ip">Remote IP</th>
-              <th className="col-codec">Codec</th>
-              <th className="col-type">Type</th>
+              <th className="col-timestamp text-center">Timestamp</th>
+              <th className="col-number text-center">Calling</th>
+              <th className="col-number text-center">Called</th>
+              <th className="col-duration text-center">Duration</th>
+              <th className="col-nap text-center">Incoming NAP</th>
+              <th className="col-nap text-center">Outgoing NAP</th>
+              <th className="col-cause text-center">Cause</th>
+              <th className="col-ip text-center">Local IP</th>
+              <th className="col-ip text-center">Remote IP</th>
+              <th className="col-codec text-center">Codec</th>
+              <th className="col-originator text-center">Originator</th>
             </tr>
           </thead>
           <tbody>
@@ -172,17 +172,13 @@ export default function ReportTable({ filters }) {
                 <td className="text-center">{formatDuration(r.call_duration)}</td>
                 <td className="text-truncate" title={r.incoming_nap}>{r.incoming_nap ?? '-'}</td>
                 <td className="text-truncate" title={r.nap}>{r.nap ?? '-'}</td>
-                <td className="text-truncate" title={r.termination_cause_string ?? r.termination_cause}>
-                  {r.termination_cause_string ?? r.termination_cause ?? '-'}
+                <td className="text-center" title={r.termination_cause_string}>
+                  {r.termination_cause_string ?? '-'}
                 </td>
                 <td className="text-nowrap font-monospace small">{r.local_sip_ip ?? '-'}</td>
                 <td className="text-nowrap font-monospace small">{r.remote_sip_ip ?? '-'}</td>
                 <td className="text-center">{r.codec ?? '-'}</td>
-                <td className="text-center">
-                  <span className={`badge bg-${r.record_type === 'END' ? 'success' : 'info'}`}>
-                    {r.record_type ?? '-'}
-                  </span>
-                </td>
+                <td className="text-truncate" title={r.originator_name}>{r.originator_name ?? '-'}</td>
               </tr>
             ))}
           </tbody>

@@ -1,6 +1,6 @@
 .counter {
-  font-size: 16px;
-  padding: 5px 10px;
+  font-size: 14px;
+  padding: 10px 20px;
   border-radius: 5px;
   color: var(--accent);
   background: var(--accent-bg);
@@ -18,7 +18,7 @@
 }
 
 .app-container {
-  padding: 0 50px;
+  padding: 20px 50px;
   box-sizing: border-box;
 }
 
