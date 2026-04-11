@@ -39,6 +39,26 @@ export default function ReportTable({ filters }) {
           console.log('Adding calling_number filter:', filters.calling_number);
           filterArray.push({ wildcard: { "calling_number.keyword": `*${filters.calling_number}*` } });
         }
+
+        if (filters.incoming_nap) {
+            console.log('Adding incoming_nap filter:', filters.incoming_nap);
+            filterArray.push({ wildcard: { "incoming_nap.keyword": `*${filters.incoming_nap}*` } });
+          }
+
+        if (filters.nap) {
+          console.log('Adding nap filter:', filters.nap);
+          filterArray.push({ wildcard: { "nap.keyword": `*${filters.nap}*` } });
+        }
+
+        if (filters.local_sip_ip) {
+          console.log('Adding local_sip_ip filter:', filters.local_sip_ip);
+          filterArray.push({ wildcard: { "local_sip_ip.keyword": `*${filters.local_sip_ip}*` } });
+        }
+
+        if (filters.remote_sip_ip) {
+          console.log('Adding remote_sip_ip filter:', filters.remote_sip_ip);
+          filterArray.push({ wildcard: { "remote_sip_ip.keyword": `*${filters.remote_sip_ip}*` } });
+        }
         
         if (filters.begin || filters.end) {
           const rangeFilter = { range: { ts: {} } };

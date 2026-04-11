@@ -115,10 +115,10 @@ export default function FiltersBar({ onApply }) {
         </div>
 
         <div className="col-md-2">
-          <label className="form-label small mb-1">NAP</label>
+          <label className="form-label small mb-1">Outgoing NAP</label>
           <input
             className="form-control form-control-sm"
-            placeholder="NAP"
+            placeholder="Outgoing NAP"
             value={nap}
             onChange={(e) => setNap(e.target.value)}
           />
