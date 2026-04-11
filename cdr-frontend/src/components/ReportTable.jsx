@@ -62,6 +62,9 @@ export default function ReportTable({ filters }) {
               filter: filterArray
             }
           },
+          sort: [
+            { ts: { order: "desc" } }
+          ], 
           _source: true,
           track_total_hits: true
         };
